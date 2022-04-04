@@ -19,7 +19,6 @@ class TestCiscoIOSType5(TestCase):
             (b"$1$3.ND$cRS/.rSfCIlwGuW0H3YzW.", b"7foo7"),
             (b"$1$tVk7$JAnQZwfmGZBk4TslhclFY.", b"8foo8"),
             (b"$1$262O$Hyxgu5up0M6a7nbsUZXmu/", b"9foo9"),
-
             # C9300, IOS-XE 16.09.05
             (b"$1$FCLB$2a3ny5w.KvoBl9WtjJePx1", b"0foo0"),
             (b"$1$bR4d$TcOVI.MROLfU2Gh4aXQrb0", b"1foo1"),

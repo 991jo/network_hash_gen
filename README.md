@@ -10,7 +10,7 @@ To build the documentation run
 pdoc3 --html network_hash_gen
 ```
 
-This will generate documentation in a filder called `html`.
+This will generate documentation in a folder called `html`.
 
 # Development
 
@@ -20,4 +20,28 @@ The tests can be run with
 
 ```
 python3 -m unittest discover
+```
+
+## Code Formatting.
+
+The code in this repository is formated via [black](https://github.com/psf/black).
+The default settings are used.
+Please format the code with black before commiting.
+This can be done with
+
+```
+black network_hash_gen/
+```
+
+The code formatting is also checked (but not executed) in the commit hooks.
+
+## Pre-Commit Hooks
+
+There are pre-commit hooks that run the code formating.
+To activate them, link the script in `scripts/pre-commit.sh` into your git hooks
+directory:
+
+```
+cd .git/hooks/
+ln -s ../../scripts/pre-commit
 ```
