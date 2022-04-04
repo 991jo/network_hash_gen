@@ -36,12 +36,11 @@ jobs:
           
       - name: generate the docs
         run: |
-          mkdir html
+          mkdir -p html
+          mkdir -p docs
           pdoc3 --html --force -o html network_hash_gen
           mv html/network_hash_gen/* docs
           rm -r html
-          ls
-          ls docs
           
       - name: commit the docs
         run: |
