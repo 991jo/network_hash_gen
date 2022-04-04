@@ -45,8 +45,6 @@ jobs:
           
       - name: commit the docs
         run: |
-          git branch gh-pages
-          git checkout gh-pages
           git config --local user.email "jo+github-actions@swagspace.org"
           git config --local user.name "github-actions[bot]"
           git commit -m "generated documentation" -a
@@ -55,3 +53,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: "gh-pages"
