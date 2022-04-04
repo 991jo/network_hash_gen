@@ -14,5 +14,5 @@ setup(
     description="A library to generate hashes for network devices.",
     long_description=readme,
     install_requires=["passlib == 1.7.4", "scrypt == 0.8.20"],
-    extras_require={"dev": ["black"]},
+    extras_require={"dev": ["black"], "docs": ["pdoc3"]},
 )
