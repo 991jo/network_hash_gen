@@ -47,6 +47,7 @@ jobs:
         run: |
           git config --local user.email "jo+github-actions@swagspace.org"
           git config --local user.name "github-actions[bot]"
+          git add docs
           git commit -m "generated documentation" -a
           
       - name: Push changes
