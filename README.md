@@ -1,6 +1,7 @@
 # Network Hash Gen
 
-Generating hashes for network devices like routers and switches
+Generating hashes for network devices like routers and switches - with the
+option to specify seeds or salts.
 
 # Currently supported hashes:
 
@@ -11,6 +12,10 @@ Generating hashes for network devices like routers and switches
 If you are missing a hash function, please open an issue.
 
 # Example
+
+This example generates a hash with a random salt and a hash with a given seed.
+The first function returns a different hash most of the times while the
+second one always returns the same hash value.
 
 ``` python3
 >>> from network_hash_gen.cisco_ios.type_9 import type_9_hash, type_9_hash_seeded
