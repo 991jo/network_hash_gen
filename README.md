@@ -2,6 +2,14 @@
 
 Generating hashes for network devices like routers and switches
 
+# Currently supported hashes:
+
+- Cisco IOS/IOS-XE
+  - Type 5
+  - Type 9
+
+If you are missing a hash function, please open an issue.
+
 # Documentation
 
 To build the documentation run
