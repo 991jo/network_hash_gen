@@ -34,7 +34,7 @@ jobs:
       - name: generate the docs
         run: |
           mkdir html
-          pydoc3 --html --force -o html network_hash_gen
+          pdoc3 --html --force -o html network_hash_gen
           mv html/network_hash_gen/* docs
           rm -r html
           
