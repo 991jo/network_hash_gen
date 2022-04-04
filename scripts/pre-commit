@@ -10,3 +10,10 @@ if [ $? != 0 ]; then
 	printf "${RED}aborting commit due to incomplete formatting.${NOCOLOR}\n"
 	exit 1
 fi
+
+python -m unittest discover
+
+if [ $? != 0 ]; then
+	printf "${RED}aborting commit because unittests failed.${NOCOLOR}\n"
+	exit 1
+fi

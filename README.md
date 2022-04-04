@@ -33,7 +33,9 @@ The tests can be run with
 python3 -m unittest discover
 ```
 
-## Code Formatting.
+The unittests are also run via the pre-commit hooks.
+
+## Code Formatting
 
 The code in this repository is formated via [black](https://github.com/psf/black).
 The default settings are used.
@@ -48,7 +50,7 @@ The code formatting is also checked (but not executed) in the commit hooks.
 
 ## Pre-Commit Hooks
 
-There are pre-commit hooks that run the code formating.
+There are pre-commit hooks that check the code formating and run the unittests.
 To activate them, link the script in `scripts/pre-commit.sh` into your git hooks
 directory:
 
