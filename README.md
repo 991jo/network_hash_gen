@@ -10,6 +10,16 @@ Generating hashes for network devices like routers and switches
 
 If you are missing a hash function, please open an issue.
 
+# Example
+
+``` python3
+>>> from network_hash_gen.cisco_ios.type_9 import type_9_hash, type_9_hash_seeded
+>>> type_9_hash("foobar")
+'$9$b52oqNlalWEBTi$f7ziTlkOvnMb.mXuXejYfjBGzQ5GZKNRGaFFYZlYecQ'
+>>> type_9_hash_seeded("foobar", "$hostname-$username")
+'$9$XpsDCh72ruxTQc$Cm80vIgCAQPhWrLJczX53Z7qVg0AxKui6t8.QbWfBsU'
+```
+
 # Documentation
 
 The documentation build against the current master branch can be found here:
