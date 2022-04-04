@@ -12,7 +12,10 @@ If you are missing a hash function, please open an issue.
 
 # Documentation
 
-To build the documentation run
+The documentation build against the current master branch can be found here:
+https://991jo.github.io/network_hash_gen
+
+To build the documentation for a specific version run
 
 ```
 pdoc3 --html network_hash_gen
