@@ -11,6 +11,11 @@ b64table = str.maketrans(std_b64chars, cisco_b64chars)
 def type_9_hash_salted(password: str, salt: str) -> str:
     """
     Calculates a Cisco IOS/IOS-XE Type 9 hash with the given password and salt.
+
+    This function assumes that the given salt is valid for that hash.
+    Using an invalid salt leads to undefined behaviour.
+    Prefer the `type_9_hash` and `type_9_hash_seeded` functions over this one
+    if possible.
     """
 
     hash = scrypt.hash(password, salt, 16384, 1, 1, 32)

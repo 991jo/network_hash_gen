@@ -1,4 +1,6 @@
 """
+# network_hash_gen
+
 network_hash_gen provides functions for hashing passwords for network devices
 like routers and switches.
 
@@ -16,6 +18,16 @@ Usually there are 3 kinds of functions for each type of hash.
   If possible prefer one of the other functions.
   This function does not check whether that salt makes sense/is supported for
   that hash and may have undefined behaviour if a invalid salt is given.
+
+## Example
+
+```
+>>> from network_hash_gen.cisco_ios.type_9 import type_9_hash, type_9_hash_seeded
+>>> type_9_hash("foobar")
+'$9$b52oqNlalWEBTi$f7ziTlkOvnMb.mXuXejYfjBGzQ5GZKNRGaFFYZlYecQ'
+>>> type_9_hash_seeded("foobar", "$hostname-$username")
+'$9$XpsDCh72ruxTQc$Cm80vIgCAQPhWrLJczX53Z7qVg0AxKui6t8.QbWfBsU'
+```
 """
 
 __version__ = "0.0.1"

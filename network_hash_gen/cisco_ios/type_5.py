@@ -10,6 +10,11 @@ md5_crypt_salt_chars = (
 def type_5_hash_salted(password: str, salt: str) -> str:
     """
     Calculates a Cisco IOS/IOS-XE Type 5 hash with the given password and salt.
+
+    This function assumes that the given salt is valid for that hash.
+    Using an invalid salt leads to undefined behaviour.
+    Prefer the `type_5_hash` and `type_5_hash_seeded` functions over this one
+    if possible.
     """
 
     m = md5_crypt.using(salt=salt).hash(password)
