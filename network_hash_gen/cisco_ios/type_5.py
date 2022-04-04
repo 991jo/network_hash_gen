@@ -1,4 +1,4 @@
-from typing import ByteString, Optional
+from typing import Optional
 from passlib.hash import md5_crypt
 import random
 
@@ -7,17 +7,16 @@ md5_crypt_salt_chars = (
 )
 
 
-def type_5_hash_salted(password: ByteString, salt: ByteString) -> ByteString:
+def type_5_hash_salted(password: str, salt: str) -> str:
     """
     Calculates a Cisco IOS/IOS-XE Type 5 hash with the given password and salt.
     """
 
-    salt_str = bytes(salt).decode()
-    m = md5_crypt.using(salt=salt_str).hash(password)
-    return bytearray(m, encoding="utf-8")
+    m = md5_crypt.using(salt=salt).hash(password)
+    return m
 
 
-def _generate_type_5_salt(seed: Optional[str] = None) -> ByteString:
+def _generate_type_5_salt(seed: Optional[str] = None) -> str:
     """
     Generates a salt for Cisco IOS type 5 hashes.
 
@@ -36,10 +35,10 @@ def _generate_type_5_salt(seed: Optional[str] = None) -> ByteString:
     for _ in range(4):
         output += rng.choice(md5_crypt_salt_chars)
 
-    return bytearray(output, encoding="utf-8")
+    return output
 
 
-def type_5_hash_seeded(password: ByteString, seed: str) -> ByteString:
+def type_5_hash_seeded(password: str, seed: str) -> str:
     """
     Calculates a Cisco IOS/IOS-XE Type 5 hash with the given seed used for
     generating a appropriate salt.
@@ -51,7 +50,7 @@ def type_5_hash_seeded(password: ByteString, seed: str) -> ByteString:
     return type_5_hash_salted(password, salt)
 
 
-def type_5_hash(password: ByteString) -> ByteString:
+def type_5_hash(password: str) -> str:
     """
     Calculates a Cisco IOS/IOS-XE Type 5 hash.
 
