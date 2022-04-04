@@ -190,3 +190,5 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/venv,python,vim
 
+# pdoc
+html
