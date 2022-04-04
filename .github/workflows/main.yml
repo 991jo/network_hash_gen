@@ -40,6 +40,7 @@ jobs:
           mkdir -p docs
           pdoc3 --html --force -o html network_hash_gen
           mv html/network_hash_gen/* docs
+          touch docs/.nojekyll
           rm -r html
           
       - name: commit the docs
