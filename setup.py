@@ -15,5 +15,9 @@ setup(
     long_description=readme,
     long_description_content_type="text/markdown",
     install_requires=["passlib == 1.7.4", "scrypt == 0.8.20"],
-    extras_require={"dev": ["black"], "docs": ["pdoc3"], "publish": ["twine"]},
+    extras_require={
+        "dev": ["black", "coverage"],
+        "docs": ["pdoc3"],
+        "publish": ["twine"],
+    },
 )

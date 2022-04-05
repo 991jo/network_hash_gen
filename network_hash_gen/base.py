@@ -26,7 +26,7 @@ class BaseHash:
         If the salt is invalid for the hash, the behaviour is undefined.
         Prefern the `hash` and `hash_seeded` methods over this one if possible.
         """
-        pass
+        pass  # pragma: no cover
 
     @classmethod
     def _generate_salt(cls, seed: Optional[str] = None) -> str:

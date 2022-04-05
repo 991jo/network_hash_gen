@@ -1,5 +1,5 @@
-from network_hash_gen.tests.hash_test_suite import BaseHashTest
-from ..type_9 import Type9
+from tests.hash_test_suite import BaseHashTest
+from network_hash_gen.cisco_ios import Type9
 
 
 class TestCiscoIOSType9(BaseHashTest.HashTest):
