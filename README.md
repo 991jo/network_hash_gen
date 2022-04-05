@@ -18,10 +18,10 @@ The first function returns a different hash most of the times while the
 second one always returns the same hash value.
 
 ``` python3
->>> from network_hash_gen.cisco_ios.type_9 import type_9_hash, type_9_hash_seeded
->>> type_9_hash("foobar")
-'$9$b52oqNlalWEBTi$f7ziTlkOvnMb.mXuXejYfjBGzQ5GZKNRGaFFYZlYecQ'
->>> type_9_hash_seeded("foobar", "$hostname-$username")
+>>> from network_hash_gen.cisco_ios import Type9
+>>> Type9.hash("foobar")
+'$9$FteIXKc69u9886$JFenYTrYz7kgex.60fbd8kzIg3Y/fE8lhsrtZeiif8k'
+>>> Type9.hash_seeded("foobar", "$hostname-$username")
 '$9$XpsDCh72ruxTQc$Cm80vIgCAQPhWrLJczX53Z7qVg0AxKui6t8.QbWfBsU'
 ```
 
