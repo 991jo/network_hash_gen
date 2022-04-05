@@ -31,5 +31,3 @@ Usually there are 3 kinds of functions for each type of hash.
 """
 
 __version__ = "0.0.1"
-__pdoc__ = {}
-__pdoc__["tests"] = False
