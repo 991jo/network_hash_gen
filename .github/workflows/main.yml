@@ -7,8 +7,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -38,7 +36,7 @@ jobs:
         run: |
           mkdir -p html
           mkdir -p docs
-          pdoc3 --html --force -o html network_hash_gen
+          pdoc3 --html --force --template-dir=templates -o html network_hash_gen
           mv html/network_hash_gen/* docs
           touch docs/.nojekyll
           rm -r html

@@ -1,13 +1,11 @@
-from unittest import TestCase
+from ..type_5 import Type5
+from network_hash_gen.tests.hash_test_suite import BaseHashTest
 
-from ..type_5 import type_5_hash_salted
 
-
-class TestCiscoIOSType5(TestCase):
-    def test_salted(self):
-
-        # hash, plaintext
-        data = [
+class TestCisocIOSType5(BaseHashTest.HashTest):
+    def setUp(self):
+        self.group = Type5
+        self.hash_password_pairs = [
             # ASR920, IOS-XE 16.09.05f
             ("$1$u5Qz$ASoUsdGV2sOmi8XYkTuex1", "0foo0"),
             ("$1$Awu/$1X3gez8VPPh9.McBXfA1..", "1foo1"),
@@ -32,6 +30,7 @@ class TestCiscoIOSType5(TestCase):
             ("$1$t0yF$gNSfdCyGLt5kWicAv7qgf0", "9foo9"),
         ]
 
-        for hash, plaintext in data:
-            salt = hash.split("$")[2]
-            self.assertEqual(hash, type_5_hash_salted(plaintext, salt))
+        self.hash_password_seed_tuples = [
+            ("$1$v4mc$2Suu.8oPyYRG0.XUfV75D0", "asdfasdfasdf", "tzuijhuikj"),
+            ("$1$UMmK$dKZmb7om9b6O/E/qlRILM0", "123sd()123!", "78/(123ksdiASDij"),
+        ]
