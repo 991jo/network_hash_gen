@@ -50,19 +50,19 @@ python3 -m unittest discover
 
 The unittests are also run via the pre-commit hooks.
 
-To get test coverage reports [Coverage](https://coverage.readthedocs.io/en/latest/)
+To get test coverage reports [coverage](https://coverage.readthedocs.io/en/latest/)
 is used. Run 
 
 ```
 coverage run -m unittest discover
 ```
 
-To run the tests and `coverage report` for a CLI report of `coverage html` to
+to run the tests and `coverage report` for a CLI report of `coverage html` to
 generate a HTML version of the coverage report.
 
 ## Code Formatting
 
-The code in this repository is formated via [black](https://github.com/psf/black).
+The code in this repository is formated with [black](https://github.com/psf/black).
 The default settings are used.
 Please format the code with black before commiting.
 This can be done with
