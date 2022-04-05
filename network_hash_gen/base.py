@@ -24,7 +24,7 @@ class BaseHash:
         """
         calculates a hash from a fiven password and salt.
         If the salt is invalid for the hash, the behaviour is undefined.
-        Prefern the `hash` and `hash_seeded` methods over this one if possible.
+        Prefer the `hash` and `hash_seeded` methods over this one if possible.
         """
         pass  # pragma: no cover
 
