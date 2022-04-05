@@ -25,6 +25,14 @@ second one always returns the same hash value.
 '$9$XpsDCh72ruxTQc$Cm80vIgCAQPhWrLJczX53Z7qVg0AxKui6t8.QbWfBsU'
 ```
 
+# Installation
+
+This package can be installed via PyPi/pip:
+
+```
+pip install network-hash-gen
+```
+
 # Documentation
 
 The documentation build against the current master branch can be found here:
@@ -39,6 +47,14 @@ pdoc3 --html --template-dir=templates network_hash_gen
 This will generate documentation in a folder called `html`.
 
 # Development
+
+## Setup
+
+Clone this repository, then create a venv.
+Install this package and the development and documentation dependencies via 
+```
+pip install -e .[dev,docs]
+```
 
 ## Running the tests
 
