@@ -33,7 +33,7 @@ https://991jo.github.io/network_hash_gen
 To build the documentation for a specific version run
 
 ```
-pdoc3 --html network_hash_gen
+pdoc3 --html --template-dir=templates network_hash_gen
 ```
 
 This will generate documentation in a folder called `html`.
