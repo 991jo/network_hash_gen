@@ -8,6 +8,9 @@ option to specify seeds or salts.
 - Cisco IOS/IOS-XE
   - Type 5
   - Type 9
+- Juniper JunOS
+  - Type 1
+  - Type 6
 
 If you are missing a hash function, please open an issue.
 

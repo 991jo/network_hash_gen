@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "network_hash_gen"
-version = "0.0.2"
+version = "0.1.0"
 description = "A library to generate hashes for network devices."
 authors = ["Johannes Erwerle <jo+network_hash_gen@swagspace.org>"]
 license = "GPL-3.0-or-later"

@@ -29,5 +29,3 @@ Usually there are 3 kinds of functions for each type of hash.
 '$9$XpsDCh72ruxTQc$Cm80vIgCAQPhWrLJczX53Z7qVg0AxKui6t8.QbWfBsU'
 ```
 """
-
-__version__ = "0.0.1"
