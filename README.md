@@ -27,7 +27,8 @@ second one always returns the same hash value.
 
 # Installation
 
-This package can be installed via PyPi/pip:
+This package can be installed from PyPi via pip or whatever you prefer for
+dependency management.
 
 ```
 pip install network-hash-gen
@@ -50,18 +51,20 @@ This will generate documentation in a folder called `html`.
 
 ## Setup
 
-Clone this repository, then create a venv.
-Install this package and the development and documentation dependencies via 
+This project uses [poetry](https://python-poetry.org/).
+
+Clone this repository, then run
 ```
-pip install -e .[dev,docs]
+poetry install
 ```
+This will create a venv and install the dev dependencies.
 
 ## Running the tests
 
-The tests can be run with
+The tests are in the `tests` folder and are executed with
 
 ```
-python3 -m unittest discover
+python3 -m unittest
 ```
 
 The unittests are also run via the pre-commit hooks.
@@ -70,7 +73,7 @@ To get test coverage reports [coverage](https://coverage.readthedocs.io/en/lates
 is used. Run 
 
 ```
-coverage run -m unittest discover
+coverage run -m unittest
 ```
 
 to run the tests and `coverage report` for a CLI report of `coverage html` to

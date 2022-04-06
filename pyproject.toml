@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "network_hash_gen"
+version = "0.0.2"
+description = "A library to generate hashes for network devices."
+authors = ["Johannes Erwerle <jo+network_hash_gen@swagspace.org>"]
+license = "GPL-3.0-or-later"
+readme = "README.md"
+repository = "https://github.com/991jo/network_hash_gen"
+documentation = "https://991jo.github.io/network_hash_gen/"
+
+keywords = ["password", "hash", "network", "cisco"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+passlib = "^1.7.4"
+scrypt = "^0.8.20"
+
+[tool.poetry.dev-dependencies]
+pdoc3 = "^0.10.0"
+twine = "^4.0.0"
+coverage = "^6.3.2"
+black = "^22.3.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
