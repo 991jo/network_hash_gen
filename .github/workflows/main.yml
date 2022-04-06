@@ -30,13 +30,14 @@ jobs:
       
       - name: setup python environment
         run: |
-          pip install -e .[docs]
+          pip install poetry
+          poetry install
           
       - name: generate the docs
         run: |
           mkdir -p html
           mkdir -p docs
-          pdoc3 --html --force --template-dir=templates -o html network_hash_gen
+          poetry run pdoc3 --html --force --template-dir=templates -o html network_hash_gen
           mv html/network_hash_gen/* docs
           touch docs/.nojekyll
           rm -r html
