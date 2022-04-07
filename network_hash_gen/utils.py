@@ -1,5 +1,5 @@
-from typing import Optional
 import random
+from typing import Optional
 
 
 def _generate_salt(chars: str, length: int, seed: Optional[str] = None) -> str:

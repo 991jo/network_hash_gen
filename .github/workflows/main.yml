@@ -25,14 +25,14 @@ jobs:
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-      
+
       - uses: actions/setup-python@v3.1.0
-      
+
       - name: setup python environment
         run: |
           pip install poetry
           poetry install
-          
+
       - name: generate the docs
         run: |
           mkdir -p html
@@ -41,14 +41,14 @@ jobs:
           mv html/network_hash_gen/* docs
           touch docs/.nojekyll
           rm -r html
-          
+
       - name: commit the docs
         run: |
           git config --local user.email "jo+github-actions@swagspace.org"
           git config --local user.name "github-actions[bot]"
           git add docs
           git commit -m "generated documentation" -a
-          
+
       - name: Push changes
         uses: ad-m/github-push-action@v0.5.0
         with:

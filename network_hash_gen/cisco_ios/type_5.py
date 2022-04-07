@@ -1,4 +1,5 @@
 from passlib.hash import md5_crypt
+
 from network_hash_gen.base import BaseHash
 
 

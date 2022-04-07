@@ -1,5 +1,6 @@
-import scrypt
 import base64
+
+import scrypt
 
 from network_hash_gen.base import BaseHash
 
