@@ -73,7 +73,7 @@ python3 -m unittest
 The unittests are also run via the pre-commit hooks.
 
 To get test coverage reports [coverage](https://coverage.readthedocs.io/en/latest/)
-is used. Run 
+is used. Run
 
 ```
 coverage run -m unittest
@@ -98,10 +98,14 @@ The code formatting is also checked (but not executed) in the commit hooks.
 ## Pre-Commit Hooks
 
 There are pre-commit hooks that check the code formating and run the unittests.
-To activate them, link the script in `scripts/pre-commit.sh` into your git hooks
-directory:
+They are executed via [pre-commit](https://pre-commit.com/).
+To enable the hooks run
 
 ```
-cd .git/hooks/
-ln -s ../../scripts/pre-commit
+pre-commit install
+```
+
+To run the hooks on all files execute
+```
+pre-commit run --all-files
 ```

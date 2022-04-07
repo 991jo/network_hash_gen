@@ -50,6 +50,14 @@ class TestJuniperJunOSType1(BaseHashTest.HashTest):
         ]
 
         self.hash_password_seed_tuples = [
-            ("$6$v4mca8NQ$QUVmP19Oxy61A44H8Zuah05nxnOSkQ0QC7fIm3MovsBqsKBMAUb21eLGBbb2idOPJWOMVcUlCNdD789vLGv9P0", "asdfasdfasdf", "tzuijhuikj"),
-            ("$6$UMmKKfUb$bxMa65Va7OkshQuPyDzoFFx8mBqDNHa9y9q1qTEGfbjzKtV0BuQkyGlWX01pczZZEqWDz63M8RWoG5Zy.PWBb0", "123sd()123!", "78/(123ksdiASDij"),
+            (
+                "$6$v4mca8NQ$QUVmP19Oxy61A44H8Zuah05nxnOSkQ0QC7fIm3MovsBqsKBMAUb21eLGBbb2idOPJWOMVcUlCNdD789vLGv9P0",
+                "asdfasdfasdf",
+                "tzuijhuikj",
+            ),
+            (
+                "$6$UMmKKfUb$bxMa65Va7OkshQuPyDzoFFx8mBqDNHa9y9q1qTEGfbjzKtV0BuQkyGlWX01pczZZEqWDz63M8RWoG5Zy.PWBb0",
+                "123sd()123!",
+                "78/(123ksdiASDij",
+            ),
         ]

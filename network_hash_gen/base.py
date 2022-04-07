@@ -1,5 +1,6 @@
-from typing import Optional
 from abc import abstractmethod
+from typing import Optional
+
 from network_hash_gen.utils import _generate_salt as _generate
 
 

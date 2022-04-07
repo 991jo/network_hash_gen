@@ -1,5 +1,6 @@
-from network_hash_gen.base import BaseHash
 from crypt import crypt
+
+from network_hash_gen.base import BaseHash
 
 
 class Type6(BaseHash):
