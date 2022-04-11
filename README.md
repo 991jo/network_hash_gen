@@ -11,6 +11,7 @@ option to specify seeds or salts.
 - Juniper JunOS
   - Type 1
   - Type 6
+  - Type 9
 
 If you are missing a hash function, please open an issue.
 
