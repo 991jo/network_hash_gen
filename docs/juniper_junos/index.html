@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>network_hash_gen.juniper_junos API documentation</title>
+<meta name="description" content="This module provides hash functions for Juniper Junos …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>network_hash_gen.juniper_junos</code></h1>
+</header>
+<section id="section-intro">
+<p>This module provides hash functions for Juniper Junos</p>
+<p>Supported are:</p>
+<ul>
+<li>Type 1 (md5-based)</li>
+<li>Type 6 (sha512-based)</li>
+<li>Type 9 (Vigenère-based (not a secure hash, must a obfuscation))</li>
+</ul>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+This module provides hash functions for Juniper Junos
+
+
+Supported are:
+
+  - Type 1 (md5-based)
+  - Type 6 (sha512-based)
+  - Type 9 (Vigenère-based (not a secure hash, must a obfuscation))
+&#34;&#34;&#34;
+from .type_1 import Type1
+from .type_6 import Type6
+from .type_9 import Type9
+
+__pdoc__ = {}
+
+__all__ = [&#34;Type1&#34;, &#34;Type6&#34;, &#34;Type9&#34;]</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="network_hash_gen.juniper_junos.type_1" href="type_1.html">network_hash_gen.juniper_junos.type_1</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="network_hash_gen.juniper_junos.type_6" href="type_6.html">network_hash_gen.juniper_junos.type_6</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="network_hash_gen.juniper_junos.type_9" href="type_9.html">network_hash_gen.juniper_junos.type_9</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="network_hash_gen.juniper_junos.Type1"><code class="flex name class">
+<span>class <span class="ident">Type1</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates the md5-crypt based type 1 hashes for Juniper Junos.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Type1(CiscoType5):
+    &#34;&#34;&#34;
+    Calculates the md5-crypt based type 1 hashes for Juniper Junos.
+    &#34;&#34;&#34;
+
+    salt_length = 8</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="network_hash_gen.cisco_ios.type_5.Type5" href="../cisco_ios/type_5.html#network_hash_gen.cisco_ios.type_5.Type5">Type5</a></li>
+<li><a title="network_hash_gen.base.BaseHash" href="../base.html#network_hash_gen.base.BaseHash">BaseHash</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="network_hash_gen.juniper_junos.Type1.salt_chars"><code class="name">var <span class="ident">salt_chars</span> : str</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="network_hash_gen.base.BaseHash" href="../base.html#network_hash_gen.base.BaseHash">BaseHash</a></code>.<code><a title="network_hash_gen.base.BaseHash.salt_chars" href="../base.html#network_hash_gen.base.BaseHash.salt_chars">salt_chars</a></code>
+</p>
+<div class="desc inherited"><p>A string containing all characters that can be used in a salt.</p></div>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type1.salt_length"><code class="name">var <span class="ident">salt_length</span> : int</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="network_hash_gen.base.BaseHash" href="../base.html#network_hash_gen.base.BaseHash">BaseHash</a></code>.<code><a title="network_hash_gen.base.BaseHash.salt_length" href="../base.html#network_hash_gen.base.BaseHash.salt_length">salt_length</a></code>
+</p>
+<div class="desc inherited"><p>The length of the salt.</p></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="network_hash_gen.juniper_junos.Type1.hash"><code class="name flex">
+<span>def <span class="ident">hash</span></span>(<span>password: str) ‑> str</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="network_hash_gen.cisco_ios.type_5.Type5" href="../cisco_ios/type_5.html#network_hash_gen.cisco_ios.type_5.Type5">Type5</a></code>.<code><a title="network_hash_gen.cisco_ios.type_5.Type5.hash" href="../base.html#network_hash_gen.cisco_ios.type_5.Type5.hash">hash</a></code>
+</p>
+<div class="desc inherited"><p>Calculates the hash …</p></div>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type1.hash_salted"><code class="name flex">
+<span>def <span class="ident">hash_salted</span></span>(<span>password: str, salt: str) ‑> str</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="network_hash_gen.cisco_ios.type_5.Type5" href="../cisco_ios/type_5.html#network_hash_gen.cisco_ios.type_5.Type5">Type5</a></code>.<code><a title="network_hash_gen.cisco_ios.type_5.Type5.hash_salted" href="../cisco_ios/type_5.html#network_hash_gen.cisco_ios.type_5.Type5.hash_salted">hash_salted</a></code>
+</p>
+<div class="desc inherited"><p>Calculates a Cisco IOS/IOS-XE Type 5 hash with the given password and
+salt …</p></div>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type1.hash_seeded"><code class="name flex">
+<span>def <span class="ident">hash_seeded</span></span>(<span>password: str, seed: str) ‑> str</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="network_hash_gen.cisco_ios.type_5.Type5" href="../cisco_ios/type_5.html#network_hash_gen.cisco_ios.type_5.Type5">Type5</a></code>.<code><a title="network_hash_gen.cisco_ios.type_5.Type5.hash_seeded" href="../base.html#network_hash_gen.cisco_ios.type_5.Type5.hash_seeded">hash_seeded</a></code>
+</p>
+<div class="desc inherited"><p>Calculates a hash with the given seed used for generating a appropriate
+salt …</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type6"><code class="flex name class">
+<span>class <span class="ident">Type6</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>SHA2 512 bit based hash for Juniper JunOS.</p>
+<p>Specification: <a href="https://akkadia.org/drepper/SHA-crypt.txt">https://akkadia.org/drepper/SHA-crypt.txt</a>
+Details:
+- 5000 rounds are used
+- the round specifier is omitted.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Type6(BaseHash):
+    &#34;&#34;&#34;
+    SHA2 512 bit based hash for Juniper JunOS.
+
+    Specification: https://akkadia.org/drepper/SHA-crypt.txt
+    Details:
+    - 5000 rounds are used
+    - the round specifier is omitted.
+    &#34;&#34;&#34;
+
+    salt_length = 8
+    salt_chars = &#34;./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&#34;
+
+    @staticmethod
+    def hash_salted(password: str, salt: str) -&gt; str:
+        return sha512_crypt.using(salt=salt, rounds=5000).hash(password)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="network_hash_gen.base.BaseHash" href="../base.html#network_hash_gen.base.BaseHash">BaseHash</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="network_hash_gen.juniper_junos.Type6.salt_chars"><code class="name">var <span class="ident">salt_chars</span> : str</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="network_hash_gen.base.BaseHash" href="../base.html#network_hash_gen.base.BaseHash">BaseHash</a></code>.<code><a title="network_hash_gen.base.BaseHash.salt_chars" href="../base.html#network_hash_gen.base.BaseHash.salt_chars">salt_chars</a></code>
+</p>
+<div class="desc inherited"><p>A string containing all characters that can be used in a salt.</p></div>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type6.salt_length"><code class="name">var <span class="ident">salt_length</span> : int</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="network_hash_gen.base.BaseHash" href="../base.html#network_hash_gen.base.BaseHash">BaseHash</a></code>.<code><a title="network_hash_gen.base.BaseHash.salt_length" href="../base.html#network_hash_gen.base.BaseHash.salt_length">salt_length</a></code>
+</p>
+<div class="desc inherited"><p>The length of the salt.</p></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="network_hash_gen.juniper_junos.Type6.hash"><code class="name flex">
+<span>def <span class="ident">hash</span></span>(<span>password: str) ‑> str</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="network_hash_gen.base.BaseHash" href="../base.html#network_hash_gen.base.BaseHash">BaseHash</a></code>.<code><a title="network_hash_gen.base.BaseHash.hash" href="../base.html#network_hash_gen.base.BaseHash.hash">hash</a></code>
+</p>
+<div class="desc inherited"><p>Calculates the hash …</p></div>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type6.hash_salted"><code class="name flex">
+<span>def <span class="ident">hash_salted</span></span>(<span>password: str, salt: str) ‑> str</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="network_hash_gen.base.BaseHash" href="../base.html#network_hash_gen.base.BaseHash">BaseHash</a></code>.<code><a title="network_hash_gen.base.BaseHash.hash_salted" href="../base.html#network_hash_gen.base.BaseHash.hash_salted">hash_salted</a></code>
+</p>
+<div class="desc inherited"><p>calculates a hash from a fiven password and salt.
+If the salt is invalid for the hash, the behaviour is undefined.
+Prefer the <code>hash</code> and <code>hash_seeded</code> …</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def hash_salted(password: str, salt: str) -&gt; str:
+    return sha512_crypt.using(salt=salt, rounds=5000).hash(password)</code></pre>
+</details>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type6.hash_seeded"><code class="name flex">
+<span>def <span class="ident">hash_seeded</span></span>(<span>password: str, seed: str) ‑> str</span>
+</code></dt>
+<dd>
+<p class="inheritance">
+<em>Inherited from:</em>
+<code><a title="network_hash_gen.base.BaseHash" href="../base.html#network_hash_gen.base.BaseHash">BaseHash</a></code>.<code><a title="network_hash_gen.base.BaseHash.hash_seeded" href="../base.html#network_hash_gen.base.BaseHash.hash_seeded">hash_seeded</a></code>
+</p>
+<div class="desc inherited"><p>Calculates a hash with the given seed used for generating a appropriate
+salt …</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type9"><code class="flex name class">
+<span>class <span class="ident">Type9</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>The JunOS Type 9 password obfuscation algorithm.</p>
+<p>It is used to store passwords in the configuration that need to be
+available in plaintext, but should not be easily read by humans.
+For example passwords for BGP sessions.</p>
+<p>This is not a secure hash function!</p>
+<p>This implementation is based on code from
+<a href="https://github.com/msuksong/junosdecode/blob/master/junosdecode.py">https://github.com/msuksong/junosdecode/blob/master/junosdecode.py</a></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Type9:
+    &#34;&#34;&#34;
+    The JunOS Type 9 password obfuscation algorithm.
+
+    It is used to store passwords in the configuration that need to be
+    available in plaintext, but should not be easily read by humans.
+    For example passwords for BGP sessions.
+
+    This is not a secure hash function!
+
+    This implementation is based on code from
+    https://github.com/msuksong/junosdecode/blob/master/junosdecode.py
+    &#34;&#34;&#34;
+
+    __MAGIC = &#34;$9$&#34;
+
+    __FAMILY: List[str] = [
+        &#34;QzF3n6/9CAtpu0O&#34;,
+        &#34;B1IREhcSyrleKvMW8LXx&#34;,
+        &#34;7N-dVbwsY2g4oaJZGUDj&#34;,
+        &#34;iHkq.mPf5T&#34;,
+    ]
+    # maps single characters to numbers from 0 to 3 (incl.)
+    __EXTRA: Dict[str, int] = dict()
+    for x, item in enumerate(__FAMILY):
+        for c in item:
+            __EXTRA[c] = 3 - x
+
+    # List of 65 character, in sorted order they are:
+    # -./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+    __NUM_ALPHA: str = &#34;&#34;.join(__FAMILY)
+
+    # reverse mapping from __NUM_ALPHA
+    __ALPHA_NUM: Dict[str, int] = {x: i for (i, x) in enumerate(&#34;&#34;.join(__FAMILY))}
+
+    # encoding moduli by position
+    __ENCODING = [
+        [1, 4, 32],
+        [1, 16, 32],
+        [1, 8, 32],
+        [1, 64],
+        [1, 32],
+        [1, 4, 16, 128],
+        [1, 32, 64],
+    ]
+
+    @staticmethod
+    def encode(plaintext: str) -&gt; str:
+        &#34;&#34;&#34;
+        Encoded the given plaintext.
+        Generates a random salt.
+        &#34;&#34;&#34;
+        salt = Type9._generate_salt(length=1)
+        return Type9.encode_salted(plaintext, salt)
+
+    @staticmethod
+    def encode_seeded(plaintext: str, seed: str) -&gt; str:
+        salt = Type9._generate_salt(length=1, seed=seed)
+        return Type9.encode_salted(plaintext, salt)
+
+    @staticmethod
+    def encode_salted(plaintext: str, salt: str) -&gt; str:
+        &#34;&#34;&#34;
+        Encodes the given plaintext.
+        &#34;&#34;&#34;
+        assert len(salt) == 1
+        assert salt in Type9.__NUM_ALPHA
+
+        # an additional, random string of length 0 to 3 (incl.)
+        rand: str = Type9._generate_salt(Type9.__EXTRA[salt], seed=salt)
+
+        position: int = 0
+        prev: str = salt
+        crypt = Type9.__MAGIC + salt + rand
+
+        for x in plaintext:
+            moduli = Type9.__ENCODING[position % len(Type9.__ENCODING)]
+            crypt += Type9._gap_encode(x, prev, moduli)
+            prev = crypt[-1]
+            position += 1
+
+        return crypt
+
+    @staticmethod
+    def decode(secret: str) -&gt; str:
+        &#34;&#34;&#34;
+        Decodes the given secret.
+        &#34;&#34;&#34;
+
+        splits: List[str] = secret.split(&#34;$&#34;)
+        assert len(splits) == 3
+
+        magic: str = splits[1]
+        assert magic == &#34;9&#34;
+
+        encoding: str = splits[2]
+
+        salt: str = encoding[0]
+
+        rand_length: int = Type9.__EXTRA[salt]
+        crypt: str = encoding[1 + rand_length :]
+
+        input_position: int = 0
+
+        prev: str = salt
+
+        output: str = &#34;&#34;
+        while input_position &lt; len(crypt):
+            moduli: List[int] = Type9.__ENCODING[len(output) % len(Type9.__ENCODING)]
+            assert input_position + len(moduli) &lt;= len(crypt)
+
+            # the 2 to 4 characters that define the next output character
+            enc: str = crypt[input_position : input_position + len(moduli)]
+
+            gaps: List[int] = list()
+            for character in enc:
+                gap = Type9.__ALPHA_NUM[character] - Type9.__ALPHA_NUM[prev] - 1
+                gap %= len(Type9.__NUM_ALPHA)
+                gaps.append(gap)
+                prev = character
+
+            result = 0
+            for i, gap in enumerate(gaps):
+                result += gap * moduli[i]
+
+            output += chr(result)
+
+            input_position += len(moduli)
+
+        return output
+
+    @staticmethod
+    def _gap_encode(pc: str, prev: str, moduli: List[int]):
+        &#34;&#34;&#34;
+        pc is the plaintext byte,
+        prev is the previous encoding,
+        moduli is a list of moduli.
+        &#34;&#34;&#34;
+        assert len(pc) == 1
+        assert len(prev) == 1
+
+        _ord = ord(pc)  # Unicode value of that character
+
+        crypt: str = &#34;&#34;
+        gaps: List = []
+
+        # builds a encoding based on the given module.
+        # with moduli [1, 2, 4, 8, ...] this would be binary encoding.
+        # with moduli [1, 16, 256] it would be hexadecimal
+        # but in this case each position can have a different value
+        for mod in reversed(moduli):
+            gaps.insert(0, int(_ord / mod))
+            _ord %= mod
+
+        for gap in gaps:
+            gap += Type9.__ALPHA_NUM[prev] + 1
+            prev = Type9.__NUM_ALPHA[gap % len(Type9.__NUM_ALPHA)]
+            crypt += prev
+
+        assert len(crypt) == len(moduli)
+        return crypt
+
+    @staticmethod
+    def _parse_encoding(secret: str) -&gt; Tuple[str, str, str]:
+        &#34;&#34;&#34;
+        Returns a tuple containing the salt, rand and the encoded part
+        of the given secret
+        &#34;&#34;&#34;
+        splits: List[str] = secret.split(&#34;$&#34;)
+        assert len(splits) == 3
+
+        magic: str = splits[1]
+        assert magic == &#34;9&#34;
+
+        encoding: str = splits[2]
+
+        salt: str = encoding[0]
+
+        rand_length: int = Type9.__EXTRA[salt]
+        rand: str = encoding[1 : 1 + rand_length]
+        crypt: str = encoding[1 + rand_length :]
+
+        return salt, rand, crypt
+
+    @staticmethod
+    def _generate_salt(length: int, seed: Optional[str] = None) -&gt; str:
+        return _generate_salt(&#34;&#34;.join(Type9.__NUM_ALPHA), length, seed)</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="network_hash_gen.juniper_junos.Type9.c"><code class="name">var <span class="ident">c</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type9.item"><code class="name">var <span class="ident">item</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type9.x"><code class="name">var <span class="ident">x</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="network_hash_gen.juniper_junos.Type9.decode"><code class="name flex">
+<span>def <span class="ident">decode</span></span>(<span>secret: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Decodes the given secret.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def decode(secret: str) -&gt; str:
+    &#34;&#34;&#34;
+    Decodes the given secret.
+    &#34;&#34;&#34;
+
+    splits: List[str] = secret.split(&#34;$&#34;)
+    assert len(splits) == 3
+
+    magic: str = splits[1]
+    assert magic == &#34;9&#34;
+
+    encoding: str = splits[2]
+
+    salt: str = encoding[0]
+
+    rand_length: int = Type9.__EXTRA[salt]
+    crypt: str = encoding[1 + rand_length :]
+
+    input_position: int = 0
+
+    prev: str = salt
+
+    output: str = &#34;&#34;
+    while input_position &lt; len(crypt):
+        moduli: List[int] = Type9.__ENCODING[len(output) % len(Type9.__ENCODING)]
+        assert input_position + len(moduli) &lt;= len(crypt)
+
+        # the 2 to 4 characters that define the next output character
+        enc: str = crypt[input_position : input_position + len(moduli)]
+
+        gaps: List[int] = list()
+        for character in enc:
+            gap = Type9.__ALPHA_NUM[character] - Type9.__ALPHA_NUM[prev] - 1
+            gap %= len(Type9.__NUM_ALPHA)
+            gaps.append(gap)
+            prev = character
+
+        result = 0
+        for i, gap in enumerate(gaps):
+            result += gap * moduli[i]
+
+        output += chr(result)
+
+        input_position += len(moduli)
+
+    return output</code></pre>
+</details>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type9.encode"><code class="name flex">
+<span>def <span class="ident">encode</span></span>(<span>plaintext: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Encoded the given plaintext.
+Generates a random salt.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def encode(plaintext: str) -&gt; str:
+    &#34;&#34;&#34;
+    Encoded the given plaintext.
+    Generates a random salt.
+    &#34;&#34;&#34;
+    salt = Type9._generate_salt(length=1)
+    return Type9.encode_salted(plaintext, salt)</code></pre>
+</details>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type9.encode_salted"><code class="name flex">
+<span>def <span class="ident">encode_salted</span></span>(<span>plaintext: str, salt: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Encodes the given plaintext.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def encode_salted(plaintext: str, salt: str) -&gt; str:
+    &#34;&#34;&#34;
+    Encodes the given plaintext.
+    &#34;&#34;&#34;
+    assert len(salt) == 1
+    assert salt in Type9.__NUM_ALPHA
+
+    # an additional, random string of length 0 to 3 (incl.)
+    rand: str = Type9._generate_salt(Type9.__EXTRA[salt], seed=salt)
+
+    position: int = 0
+    prev: str = salt
+    crypt = Type9.__MAGIC + salt + rand
+
+    for x in plaintext:
+        moduli = Type9.__ENCODING[position % len(Type9.__ENCODING)]
+        crypt += Type9._gap_encode(x, prev, moduli)
+        prev = crypt[-1]
+        position += 1
+
+    return crypt</code></pre>
+</details>
+</dd>
+<dt id="network_hash_gen.juniper_junos.Type9.encode_seeded"><code class="name flex">
+<span>def <span class="ident">encode_seeded</span></span>(<span>plaintext: str, seed: str) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def encode_seeded(plaintext: str, seed: str) -&gt; str:
+    salt = Type9._generate_salt(length=1, seed=seed)
+    return Type9.encode_salted(plaintext, salt)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="network_hash_gen" href="../index.html">network_hash_gen</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="network_hash_gen.juniper_junos.type_1" href="type_1.html">network_hash_gen.juniper_junos.type_1</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.type_6" href="type_6.html">network_hash_gen.juniper_junos.type_6</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.type_9" href="type_9.html">network_hash_gen.juniper_junos.type_9</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="network_hash_gen.juniper_junos.Type1" href="#network_hash_gen.juniper_junos.Type1">Type1</a></code></h4>
+<ul class="">
+<li><code><a title="network_hash_gen.juniper_junos.Type1.hash" href="../base.html#network_hash_gen.juniper_junos.Type1.hash">hash</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type1.hash_salted" href="../cisco_ios/type_5.html#network_hash_gen.juniper_junos.Type1.hash_salted">hash_salted</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type1.hash_seeded" href="../base.html#network_hash_gen.juniper_junos.Type1.hash_seeded">hash_seeded</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type1.salt_chars" href="../base.html#network_hash_gen.juniper_junos.Type1.salt_chars">salt_chars</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type1.salt_length" href="#network_hash_gen.juniper_junos.Type1.salt_length">salt_length</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="network_hash_gen.juniper_junos.Type6" href="#network_hash_gen.juniper_junos.Type6">Type6</a></code></h4>
+<ul class="">
+<li><code><a title="network_hash_gen.juniper_junos.Type6.hash" href="../base.html#network_hash_gen.juniper_junos.Type6.hash">hash</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type6.hash_salted" href="#network_hash_gen.juniper_junos.Type6.hash_salted">hash_salted</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type6.hash_seeded" href="../base.html#network_hash_gen.juniper_junos.Type6.hash_seeded">hash_seeded</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type6.salt_chars" href="#network_hash_gen.juniper_junos.Type6.salt_chars">salt_chars</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type6.salt_length" href="#network_hash_gen.juniper_junos.Type6.salt_length">salt_length</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="network_hash_gen.juniper_junos.Type9" href="#network_hash_gen.juniper_junos.Type9">Type9</a></code></h4>
+<ul class="two-column">
+<li><code><a title="network_hash_gen.juniper_junos.Type9.c" href="#network_hash_gen.juniper_junos.Type9.c">c</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type9.decode" href="#network_hash_gen.juniper_junos.Type9.decode">decode</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type9.encode" href="#network_hash_gen.juniper_junos.Type9.encode">encode</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type9.encode_salted" href="#network_hash_gen.juniper_junos.Type9.encode_salted">encode_salted</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type9.encode_seeded" href="#network_hash_gen.juniper_junos.Type9.encode_seeded">encode_seeded</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type9.item" href="#network_hash_gen.juniper_junos.Type9.item">item</a></code></li>
+<li><code><a title="network_hash_gen.juniper_junos.Type9.x" href="#network_hash_gen.juniper_junos.Type9.x">x</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
